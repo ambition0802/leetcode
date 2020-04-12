@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Least Frequently Cache
  * 最近最少被使用的缓存
  */
-class LFUCache {
+class LFUCache460_Method1 {
 
     //缓存
     private static HashMap<Integer, Node> cache = new HashMap<Integer, Node>();
@@ -91,7 +91,7 @@ class LFUCache {
         }
     }
 
-    public LFUCache(int capacity) {
+    public LFUCache460_Method1(int capacity) {
         this.capacity = capacity;
     }
 
