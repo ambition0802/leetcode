@@ -5,6 +5,9 @@ import java.util.*;
 public class Twitter355 {
 
     public static void main(String[] args) {
+        
+        new PriorityQueue<Tweet>((o1, o2) -> -o1.date + o2.date);
+
         Twitter355 twitter355 = new Twitter355();
         twitter355.postTweet(1, 5);
         twitter355.postTweet(1, 3);
@@ -117,6 +120,9 @@ public class Twitter355 {
 
         public void postTweet(int tweetId) {
             Tweet tweet = new Tweet(tweetId);
+            if (this.tweetList.size() == 10) {
+                this.tweetList.remove(0);
+            }
             this.tweetList.add(tweet);
             return;
         }
