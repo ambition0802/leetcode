@@ -1,4 +1,4 @@
-package com.huang.leecode;
+package com.huang.leecode.BFS;
 
 import java.util.*;
 
