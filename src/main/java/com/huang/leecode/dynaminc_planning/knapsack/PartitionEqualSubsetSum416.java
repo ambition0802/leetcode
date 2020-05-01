@@ -34,15 +34,14 @@ public class PartitionEqualSubsetSum416 {
                     f[i][j] = f[i-1][j];
                 } else {
                     int get = f[i -1][j-nums[i - 1]] + nums[i - 1];
+                    //拿了第i个成员，结果刚好达到背包的容量
+                    if (get == knapsackCap) {
+                        return true;
+                    }
+
                     int notGet = f[i - 1][j];
                     f[i][j] = get >= notGet ? get : notGet;
                 }
-            }
-        }
-
-        for (int i = 1; i < nums.length; i++) {
-            if (f[i][knapsackCap] == knapsackCap) {
-                return true;
             }
         }
 
