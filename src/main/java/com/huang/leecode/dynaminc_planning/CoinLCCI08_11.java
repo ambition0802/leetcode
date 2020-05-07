@@ -35,6 +35,12 @@ public class CoinLCCI08_11 {
         return ways[ways.length - 1][ways[0].length - 1];
     }
 
+    /**
+     * 将二维数组压缩成一维数组
+     *
+     * @param n
+     * @return
+     */
     public int waysToChange2(int n) {
         if (n == 0) {
             return 1;
