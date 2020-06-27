@@ -1,5 +1,8 @@
-package com.huang.leecode.dynaminc_planning;
+package com.huang.leecode.dynaminc_planning.knapsack;
 
+/**
+ * 完全背包问题
+ */
 public class CoinLCCI08_11 {
 
     public static void main(String[] args) {

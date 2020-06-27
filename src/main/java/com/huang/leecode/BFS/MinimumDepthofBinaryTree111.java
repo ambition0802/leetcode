@@ -1,12 +1,6 @@
 package com.huang.leecode.BFS;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-import javafx.util.Pair;
-import org.omg.CORBA.TRANSACTION_MODE;
-import sun.reflect.generics.tree.Tree;
-
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 public class MinimumDepthofBinaryTree111 {

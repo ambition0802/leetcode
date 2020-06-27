@@ -1,10 +1,9 @@
-package com.huang.leecode;
+package com.huang.leecode.BFS;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import com.alibaba.fastjson.JSON;
-import com.sun.jmx.remote.internal.ArrayQueue;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 矩阵
