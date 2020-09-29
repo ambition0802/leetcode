@@ -1,9 +1,8 @@
 package com.huang.leecode.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import com.huang.leecode.Test;
+
+import java.util.*;
 
 /**
  * 树的四种遍历方式 ：
@@ -86,7 +85,7 @@ public class TreeTraverse {
     }
 
 
-    /***********************************后序遍历***********************************/
+    /***********************************后序遍历 (递归)***********************************/
     //保存后序遍历的解结果
     private List<Integer> postoderList = new ArrayList<>();
     //后序遍历
@@ -110,6 +109,73 @@ public class TreeTraverse {
         }
 
         postoderList.add(node.val);
+
+    }
+
+    /***********************************后序遍历 (迭代)***********************************/
+    // 方法1，按照后续遍历的顺序递归
+    private List<Integer> postorderTraversalByIteration(TreeNode root) {
+
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        root = root.left;
+
+        TreeNode preNode = null;
+
+        while (!stack.isEmpty()) {
+
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            root = stack.peek();
+            if (root.right != null && root.right != preNode) {
+                root = root.right;
+            } else {
+                result.add(root.val);
+                preNode = root;
+                root = null;
+
+                stack.pop();
+            }
+
+        }
+
+        return result;
+    }
+
+    // 方法2，按照“前序“遍历(根右左)递归，再反转结果链表(根右左--->左右根)，就是后续遍历的结果了。
+    public static List<Integer> postorderTraversalByIteration2(TreeNode root) {
+
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            root = stack.pop();
+            result.add(root.val);
+
+            if (root.left != null) {
+                stack.push(root.left);
+            }
+
+            if (root.right != null) {
+                stack.push(root.right);
+            }
+        }
+
+        Collections.reverse(result);
+        return result;
 
     }
 
